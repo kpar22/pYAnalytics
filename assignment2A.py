@@ -28,6 +28,17 @@ print(res2.head())
 ## What parts have the highest profit margin ?
 part_grp=mydata.groupby('partnum')
 agg3=part_grp['margin'].agg(np.sum)
-res2=agg2.sort_values(ascending=False)
-print(res2.head())
+res3=agg3.sort_values(ascending=False)
+print(res3.head())
 
+
+writer = pd.ExcelWriter('assignment2A.xlsx', engine='xlsxwriter')
+
+# Write each dataframe to a different worksheet.
+agg0.to_excel(writer, sheet_name='Question1')
+res.to_excel(writer, sheet_name='Question2')
+res2.to_excel(writer, sheet_name='Question3')
+res3.to_excel(writer, sheet_name='Question4')
+
+# Close the Pandas Excel writer and output the Excel file.
+writer.save()
