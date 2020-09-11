@@ -9,3 +9,7 @@ list[0]='l'
 print(list)
 
 
+
+teamA = {'india','pakistan','australia','newzealand','india','kiwi'}
+teamB = {'england','westindies','srilanka','afg','pakistan'}
+teamB & teamA
