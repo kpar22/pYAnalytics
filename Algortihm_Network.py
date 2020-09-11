@@ -7,8 +7,6 @@ Created on Wed Sep  9 16:33:54 2020
 
 
 import networkx as nx
-#pip install EoN
-#import EoN
 import matplotlib.pyplot as plt
 import random
 
@@ -57,12 +55,9 @@ def main():
     
 main()
 
-#N = 10**2 #number of individuals
-#k = 5 #expected number of partners
 
 #print("generating graph G with {} nodes".format(N))
 
-#G = nx.gnp_random_graph(N, k/(N-1)) 
 
 #print(F.nodes())
 #print(F.edges())
