@@ -20,7 +20,7 @@ def algo(G,p):
             if i!=j:
                 r=random.random()
                 if r<=p:
-                    G.add_edge(i,j)
+                    
                     ne = [(i,j)]
                 #else:
                     #ne =[(i,j)]
@@ -49,11 +49,15 @@ def main():
     recovered_list = [n for (n,d) in G.nodes(data=True) if d['state'] == 1]
     not_infected_list = [n for (n,d) in G.nodes(data = True) if d['state'] == 2]
     
+    #economic = [(u, v) for (u, v, d) in G.edges(data=True) if d["distance"] = 1]
+    family = [(u, v) for (u, v, d) in G.edges(data=True) if d["distance"] >= 0.8]
+    print(family)
     print(infected_list)
     
     display_graph(G,pos)
     
     nx.draw_networkx_edges(G,pos, edge_attr='distance' , edge_color='black')
+    nx.draw_networkx_edges(G,pos, edgelist=family, edge_attr='distance' , edge_color='blue')
     plt.show()
     plt.figure()
 
